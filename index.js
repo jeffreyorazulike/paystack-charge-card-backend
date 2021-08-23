@@ -84,7 +84,7 @@ app.get('/verify/:reference', function(req, res) {
             // save authorization
             var auth = body.authorization;
         }
-        res.send({response:{status: true, message: body.data.gateway_response, extra: body});
+        res.send({response:{status: true, message: body.data.gateway_response, extra: body}});
     });
 });
 
