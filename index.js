@@ -77,14 +77,14 @@ app.get('/verify/:reference', function(req, res) {
     paystack.transaction.verify(reference,
         function(error, body) {
         if(error){
-            res.send({error:error});
+            res.send({response:error});
             return;
         }
         if(body.data.success){
             // save authorization
             var auth = body.authorization;
         }
-        res.send(body.data.gateway_response);
+        res.send({response:body.data.gateway_response});
     });
 });
 
